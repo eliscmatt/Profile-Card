@@ -1,0 +1,155 @@
+/*BASE*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--background-page-color);
+    color: var(--text-color);
+    transition: .3s; /*For animation dark mode*/
+}
+
+h1, h2, h3 {
+    font-weight:500;
+    margin-top: 26px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--button-text-color);
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*VARIABLES CSS*/
+:root {
+    /*Colors*/
+    /*Color mode RGB(Red, Green, Blue)*/
+
+    /*http://www.outils-web.com/page-generateur-code-couleur.asp*/
+    --background-page-color: #0b9292;
+    --text-color: #000000;
+    --background-button-color: #99f0ff;
+    --background-button-color-houver: #32e8d3;
+    --button-text-color: #000000;
+
+/*Font and typography*/
+/*.5rem = 8px | 1rem = 16px ...*/
+--body-font: 'Calistoga', cursive;;
+--h2-font-size: 1.25rem;
+--h3-font-size: 1rem;
+--normal-font-size: .938rem;
+--small-font-size: .813rem;
+--smaller-font-size: .75rem;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*REUSABLE CSS CLASSES*/
+.container {
+    max-width: 100vx;
+}
+
+.grid {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+/*IMG*/
+.img_container {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*BANNER PICTURE*/
+    background-image: url(../img/austin-neill-hgO1wFPXl3I-unsplash.jpg);
+}
+
+.pp_container {
+    position: relative;
+}
+
+.pp {
+    height: 150px;
+    width: 150px;
+
+    border-radius: 100%;
+    margin: 0px;
+
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*NAV*/
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/*MAIN*/
+main{
+    margin-top: 10vh;
+    text-align: center;
+}
+
+/*BUTTONS*/
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .5rem;
+    background-color: var(--background-button-color);
+    width: 60vw;
+    padding: 1rem;
+    margin: 0.3rem;
+    border-radius: .5rem;
+    transition: .3s;
+}
+
+.button:hover {
+    background-color: var(--background-button-color-houver);
+    transform: scale(1.03);
+}
+
+/*ICON*/
+.icon>*{
+    position: relative;
+    top: 20px;
+    left: 30%;
+}
+
+.icon>*{
+    margin: 10px;
+    color: var(--text-color);
+}
+
+.icon>*:hover{
+    color: var(--background-button-color-houver);
+}
