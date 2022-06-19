@@ -153,3 +153,16 @@ main{
 .icon>*:hover{
     color: var(--background-button-color-houver);
 }
+
+#spotify{
+    margin-top: 40px;
+    background-color: #32e8d3;
+    padding: 10px;
+}
+
+footer p{
+    margin: 0, auto;
+    text-align: center;
+    margin: 40px;
+    background-color: #32e8d3;
+}
