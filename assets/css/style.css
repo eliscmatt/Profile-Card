@@ -154,7 +154,7 @@ main{
     color: var(--background-button-color-houver);
 }
 
-#spotify{
+iframe{
     margin-top: 40px;
     background-color: #32e8d3;
     padding: 10px;
