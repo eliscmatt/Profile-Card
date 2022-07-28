@@ -1,4 +1,6 @@
-/*BASE*/
+@import url('https://fonts.googleapis.com/css2?family=Merienda&family=Montserrat&display=swap');
+
+/*Config BASE*/
 * {
     box-sizing: border-box;
     padding: 0;
@@ -13,7 +15,7 @@ body {
     transition: .3s; /*For animation dark mode*/
 }
 
-h1, h2, h3 {
+h1, .profile_name, h3 {
     font-weight:500;
     margin-top: 60px;
 }
@@ -39,27 +41,30 @@ img {
     /*Color mode RGB(Red, Green, Blue)*/
 
     /*http://www.outils-web.com/page-generateur-code-couleur.asp*/
-    --background-page-color: #0b9292;
-    --text-color: #000000;
-    --background-button-color: #99f0ff;
-    --background-button-color-houver: #32e8d3;
-    --button-text-color: #000000;
+    --background-page-color: #bf6900;
+    --text-color: #3d0c11;
+    --background-button-color: #3d0c11;
+    --background-button-color-hover: #033f63;
+    --button-text-color: #b5b682;
 
-/*Font and typography*/
-/*.5rem = 8px | 1rem = 16px ...*/
---body-font: 'Calistoga', cursive;;
---h2-font-size: 1.25rem;
---h3-font-size: 1rem;
---normal-font-size: .938rem;
---small-font-size: .813rem;
---smaller-font-size: .75rem;
-}
+    /*Font and typography*/
+    /*.5rem = 8px | 1rem = 16px ...*/
+    --left-icon: 23%;
+    --body-font: 'Merienda', cursive;
+    --p-font: 'Montserrat', sans-serif;
+    --h2-font-size: 2rem;
+    --p-font-size: 1rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    }
 
 @media screen and (min-width: 968px) {
     :root {
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
+        --left-icon: 42%;
+        --h2-font-size: 3.5rem;
+        --p-font-size: 1.4rem;
+        --normal-font-size: 1.5rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
@@ -67,18 +72,18 @@ img {
 
 /*REUSABLE CSS CLASSES*/
 .container {
-    max-width: 100vx;
+    max-width: 100vmax;
 }
 
-.grid {
-    display: grid;
-    align-items: center;
+.flex {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 /*IMG*/
 .img_container {
-    height: 400px;
+    height: 430px;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -88,19 +93,36 @@ img {
 
 .pp_container {
     position: relative;
+    border: 3px solid #3d0c11;
 }
 
 .pp {
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
 
+    border: 6px solid #3d0c11;
     border-radius: 100%;
     margin: 0px;
 
     position: absolute;
-    top: -60px;
+    top: -130px;
     left: 50%;
     transform: translateX(-50%);
+}
+
+
+/*HEADER INFO*/
+.header_infos {
+    margin: 1rem;
+}
+
+.profile_name {
+    margin-bottom: 1vh;
+    font-size: var(--h2-font-size);
+}
+
+.profile_paragraph {
+    font-size: var(--p-font-size);
 }
 
 
@@ -110,12 +132,11 @@ nav {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
 }
 
 /*MAIN*/
 main{
-    margin-top: 10vh;
+    margin-top: 9vh;
     text-align: center;
 }
 
@@ -124,37 +145,46 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: .5rem;
+    column-gap: .10rem;
     background-color: var(--background-button-color);
+    font-family: var(--p-font);
     width: 60vw;
-    padding: 1rem;
-    margin: 0.3rem;
-    border-radius: .5rem;
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 10rem;
     transition: .3s;
 }
 
 .button:hover {
-    background-color: var(--background-button-color-houver);
-    transform: scale(1.03);
+    background-color: var(--background-button-color-hover);
+    transform: scale(1.2);
 }
 
 /*ICON*/
 .icon>*{
-    position: relative;
-    margin: 20px;
     color: var(--text-color);
-    top: 15px;
-    left: 25%;
+    margin: 1rem;
+    position: relative;
+    left: var(--left-icon);
 }
 
 .icon>*:hover{
-    color: var(--background-button-color-houver);
+    color: var(--background-button-color-hover);
+    transform: scale(1.2);
 }
 
 footer{
-    margin: 0, auto;
+    margin: 40px 0 0 0;
+    padding: 80px;
+    background-color: #3d0c11;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: var(--p-font-size);
     text-align: center;
-    padding: 20px;
-    margin: 40px;
-    background-color: #32e8d3;
+    font-family: var(--p-font);
+    color: #b5b682;
 }
